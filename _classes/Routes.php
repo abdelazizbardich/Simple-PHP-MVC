@@ -3,6 +3,7 @@
 class Route {
 
     public static function get($param,$function){
+        if(!isset($_GET['url'])){return false;}
         if($_GET['url'] == $param){
             if($_SERVER['REQUEST_METHOD'] == "GET"){
                 $function();
@@ -12,6 +13,7 @@ class Route {
         }
     }
     public static function post($param,$function){
+        if(!isset($_GET['url'])){return false;}
         if($_GET['url'] == $param){
             if($_SERVER['REQUEST_METHOD'] == "POST"){
                 $function();
