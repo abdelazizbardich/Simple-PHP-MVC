@@ -3,27 +3,21 @@
 class Route {
 
     public static function get($param,$function){
-        global $notFound;
-        $notFound = false;
-        if(!isset($_GET['url'])){return false;}
-        if($_GET['url'] == $param){
-            if($_SERVER['REQUEST_METHOD'] == "GET"){
-                $function();
-            }else{
-                echo "Post Method not supported";
-            }
+        if(!isset($_GET['url'])){$_GET['url'] = "/";}
+        $checkRoute = CompareUrl($_GET['url'],$param,"GET");
+        if($checkRoute['state'] == 1){
+            global $notFound;
+            $notFound = false;
+            $function();
         }
     }
     public static function post($param,$function){
-        global $notFound;
-        $notFound = false;
-        if(!isset($_GET['url'])){return false;}
-        if($_GET['url'] == $param){
-            if($_SERVER['REQUEST_METHOD'] == "POST"){
-                $function();
-            }else{
-                echo "Get Method not supported";
-            }
+        if(!isset($_GET['url'])){$_GET['url'] = "/";}
+        $checkRoute = CompareUrl($_GET['url'],$param,"POST");
+        if($checkRoute['state'] == 1){
+            global $notFound;
+            $notFound = false;
+            $function();
         }
     }
     // Load Controllers

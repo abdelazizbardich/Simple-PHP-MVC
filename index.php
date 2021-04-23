@@ -1,16 +1,9 @@
 <?php
-
+require_once './helpers/functions.php';
 require_once './_classes/Routes.php';
+
 $notFound = true;
-
-
-Route::get('/home',function(){
-    Route::middleware('auth');
-    return Route::controller("home","index");
-});
-
-
-
+require_once './routes/web.route.php';
 // if no page found
 if($notFound){
     require "./_classes/controller.php";
