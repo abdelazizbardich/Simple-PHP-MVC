@@ -1,5 +1,5 @@
 # Template_MVC_Version1-master
-
+## Note: `` To get this MVC template works you have to run it on an apache server ("do not use php built in server because)``
 ## Routes
 Use ```` web.route.php ```` inside ```` Routes ```` folder to set you routes
 
@@ -182,3 +182,5 @@ rename ```home``` by your model name
     $user = new user();
     $user->delete(1); // it will returns a boolean as a result
     ```
+    ---
+    ## <center>**** Thanks you ***</center>
