@@ -1,5 +1,5 @@
 # Template_MVC_Version1-master
-## Note: `` To get this MVC template works you have to run it on an apache server ("do not use php built in server because)``
+## Note: `` To get this MVC template works you have to run it on an apache server ("do not use php built in server)``
 ## Routes
 Use ```` web.route.php ```` inside ```` Routes ```` folder to set you routes
 
