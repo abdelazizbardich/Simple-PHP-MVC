@@ -35,13 +35,10 @@
         text-align: center;
     }
     main .box{
-        /* background-color: #ffffff; */
-        /* box-shadow: black 0px 3px 8px; */
         padding: 16px;
         border-radius: 5px;
         width: 90%;
         max-width: 900px;
-        /* height: 60%; */
         text-align: center;
     }
     .box h1{
