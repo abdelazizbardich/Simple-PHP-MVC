@@ -38,12 +38,39 @@ Route::get('/home',function(){
 * you can also pass data through URL by declaring its key in your route and pass it to your function. `` Ex ``:
 
 ```php
-Route::get('/home/{id}',function($id){
-
-    // Some codes here
+Route::get('/user/{id}/{date}',function($id,$date){
+    // we group our params in array
+    $data = array(
+        "id" => $id,
+        "date" => $date
+    );
+    // we pass it to our view
+    return Route::view("user",$data);
 
 });
 ```
+*  you can also pass data to controller Ex:
+    ```php
+    Route::get('/user/{id}/{date}',function($id,$date){
+        return Route::controller("home","index");
+    });
+    ``` 
+    * the we call our params from our controller function ``Ex``:
+    ```php
+    class homeController extends controller{
+        public function index($id,$date){
+
+            // we group our params in array
+            $data = array(
+                "id" => $id,
+                "date" => $date
+            );
+            // we pass it to our view
+            return Route::view("user",$data);
+            
+        }
+    }
+    ```
 ----
 ## Controller
 Create new controller by crating new file inside ```controllers``` folder the file name have to be " ```controllerName```.controller.php "
