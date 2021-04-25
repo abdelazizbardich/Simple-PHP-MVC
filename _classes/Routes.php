@@ -1,22 +1,24 @@
 <?php
 
 class Route {
-
+    public static $routeFound = false;
     public static function get($param,$function){
         if(!isset($_GET['url'])){$_GET['url'] = "/";}
         $checkRoute = CompareUrl($_GET['url'],$param,"GET");
-        if($checkRoute['state'] == 1){
+        if($checkRoute['state'] == 1 && self::$routeFound == false){
             global $notFound;
             $notFound = false;
+            self::$routeFound = true;
             $function();
         }
     }
     public static function post($param,$function){
         if(!isset($_GET['url'])){$_GET['url'] = "/";}
         $checkRoute = CompareUrl($_GET['url'],$param,"POST");
-        if($checkRoute['state'] == 1){
+        if($checkRoute['state'] == 1 && self::$routeFound == false){
             global $notFound;
             $notFound = false;
+            self::$routeFound = true;
             $function();
         }
     }

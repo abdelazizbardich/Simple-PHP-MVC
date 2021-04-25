@@ -2,6 +2,7 @@
 
 // Compare route with given url and method
 function CompareUrl(string $url,string $Route,string $method){
+    if($url != '/'){$url = rtrim($url,"/");}
     $fetshedUrlData = fetshUrlRoute($url,$Route);
     if($fetshedUrlData['state'] == 1){
         if($_SERVER['REQUEST_METHOD'] == $method){

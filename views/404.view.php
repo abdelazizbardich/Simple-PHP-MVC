@@ -7,7 +7,7 @@
     <title>404 - Not found</title>
     <style>
     body {
-  background-color: #2F3242;
+  /* background-color: #2F3242; */
 }
 svg {
   position: absolute;
@@ -24,7 +24,7 @@ svg {
   left: 50%;
   margin-top: -100px;
   margin-left: 50px;
-  color: #FFF;
+  /* color: #FFF; */
   font-family: Roboto;
   font-weight: 300;
 }
