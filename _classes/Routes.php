@@ -33,4 +33,9 @@ class Route {
     public static function middleware(string $name){
         require_once "./middlewares/$name.middleware.php";
     }
+    public static function view($view,$data = array()){
+        $request = $_GET;
+        extract($data);
+        return require "./views/".$view.".view.php";
+    }
 }
