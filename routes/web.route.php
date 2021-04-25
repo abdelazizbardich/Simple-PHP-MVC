@@ -2,6 +2,6 @@
 
 
 // Routes
-Route::get('/',function(){
-    return Route::view("welcome");
+Route::get('/{id}/{name}/{age}',function($id,$name,$age){
+    return Route::controller("home","index");
 });

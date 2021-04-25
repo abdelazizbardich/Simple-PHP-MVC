@@ -1,6 +1,8 @@
 <?php
 
 class Route {
+
+    public static $params;
     public static $routeFound = false;
     public static function get($param,$function){
         if(!isset($_GET['url'])){$_GET['url'] = "/";}
@@ -9,7 +11,8 @@ class Route {
             global $notFound;
             $notFound = false;
             self::$routeFound = true;
-            $function();
+            self::$params = $checkRoute['params'];
+            $function(...$checkRoute['params']);
         }
     }
     public static function post($param,$function){
@@ -19,7 +22,8 @@ class Route {
             global $notFound;
             $notFound = false;
             self::$routeFound = true;
-            $function();
+            self::$params = $checkRoute['params'];
+            $function(...$checkRoute['params']);
         }
     }
     // Load Controllers
@@ -27,7 +31,7 @@ class Route {
         require('./controllers/'.$controller.'.controller.php');
         $controller = $controller."Controller";
         $controller = new $controller();
-        $controller->$function();
+        $controller->$function(...self::$params);
     }
 
     public static function middleware(string $name){
