@@ -5,3 +5,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l 
 
 RewriteRule ^(.+) index.php?url=/$1 [QSA,L]
+
+# Disable directory browsing 
+Options -Indexes 
