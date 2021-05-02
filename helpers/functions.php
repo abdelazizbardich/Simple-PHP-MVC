@@ -83,3 +83,7 @@ function assets($path){
 function url($url){
     return ABS_PATH.$url;
 }
+// redirection
+function redirect($path){
+    header('location: '.ABS_PATH.$path);
+}
