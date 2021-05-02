@@ -78,3 +78,8 @@ function fetshUrlRoute($url,$route){
 function assets($path){
     return "./views/assets/".$path;
 }
+
+// url
+function url($url){
+    return ABS_PATH.$url;
+}
