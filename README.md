@@ -183,4 +183,14 @@ rename ```home``` by your model name
     $user->delete(1); // it will returns a boolean as a result
     ```
     ---
+    # Some helpful functions:
+    ```php
+    // return the full path of given url
+    url("url");
+    // return the full path 
+    assets("url");
+    // Redirect to given 
+    redirect("url");
+    ```
+    ----
     ## <center>**** Thanks you ***</center>
