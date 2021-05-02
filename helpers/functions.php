@@ -73,3 +73,8 @@ function fetshUrlRoute($url,$route){
         "params" => $params
     );
 }
+
+// assets fixer
+function assets($path){
+    return "./views/assets/".$path;
+}
