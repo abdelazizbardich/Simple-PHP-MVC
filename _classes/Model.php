@@ -57,4 +57,34 @@ class Model extends Database{
             return false;
         }
     }
+
+    // insert
+    public function insert(array $datas){
+        $this->tableName = get_called_class()."s";
+        $keys = "";
+        $binds = "";
+        foreach($datas as $key=>$data){
+            if( !next( $datas ) ) {
+                $keys .= $key."";
+                $binds .= ":".$key."";
+            }else{
+                $keys .= $key.",";
+                $binds .= ":".$key.",";
+            }
+        }
+        $query = "INSERT INTO $this->tableName ($keys) VALUES ($binds)";
+        $sql = $this->con->prepare($query);
+        foreach($datas as $key=>$data){
+            if(gettype($data) == "integer"){
+                $sql->bindParam(":".$key,$data,PDO::PARAM_INT);
+            }else{
+                $sql->bindParam(":".$key,$data,PDO::PARAM_STR);
+            }
+        }
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
