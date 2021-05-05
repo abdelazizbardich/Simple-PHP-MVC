@@ -19,7 +19,7 @@ class Model extends Database{
     // delete from table
     public function delete($id){
         $this->tableName = get_called_class()."s";
-        $sql = $this->con->prepare("SELECT * FROM $this->tableName WHERE id=:id");
+        $sql = $this->con->prepare("DELETE FROM $this->tableName WHERE id=:id");
         $sql->bindParam(":id",$id,PDO::PARAM_INT);
         if($sql->execute()){
             return true;
@@ -47,7 +47,7 @@ class Model extends Database{
         }
     }
     // Select
-    public function select($id){
+    public function find($id){
         $this->tableName = get_called_class()."s";
         $sql = $this->con->prepare("SELECT * FROM $this->tableName WHERE id=:id");
         $sql->bindParam(":id",$id,PDO::PARAM_INT);
@@ -57,7 +57,6 @@ class Model extends Database{
             return false;
         }
     }
-
     // insert
     public function insert(array $datas){
         $this->tableName = get_called_class()."s";
@@ -66,7 +65,7 @@ class Model extends Database{
         foreach($datas as $key=>$data){
             if( !next( $datas ) ) {
                 $keys .= $key."";
-                $binds .= ":".$key."";
+                $binds .= ":".$key;
             }else{
                 $keys .= $key.",";
                 $binds .= ":".$key.",";
@@ -74,15 +73,12 @@ class Model extends Database{
         }
         $query = "INSERT INTO $this->tableName ($keys) VALUES ($binds)";
         $sql = $this->con->prepare($query);
-        foreach($datas as $key=>$data){
-            if(gettype($data) == "integer"){
-                $sql->bindParam(":".$key,$data,PDO::PARAM_INT);
-            }else{
-                $sql->bindParam(":".$key,$data,PDO::PARAM_STR);
-            }
+
+        foreach($datas as $Name => &$Value){
+            $sql->bindParam(':'.$Name, $Value, PDO::PARAM_STR);
         }
         if($sql->execute()){
-            return true;
+            return intval($this->con->lastInsertId());
         }else{
             return false;
         }
