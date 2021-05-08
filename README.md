@@ -260,5 +260,3 @@ rename ```home``` by your model name
     // Redirect to given 
     redirect("url");
     ```
-    ----
-    ## <center>**** Thanks you ***</center>
