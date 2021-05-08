@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 class Model extends Database{
     public $tableName;
 

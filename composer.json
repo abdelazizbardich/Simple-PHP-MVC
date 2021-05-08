@@ -1,0 +1,14 @@
+{
+    "name": "youcode/mvc_template_master",
+    "description": "MVC template master",
+    "type": "mvctemplatemaster",
+    "authors": [
+        {
+            "name": "abdelaziz bardich",
+            "email": "abdelazizbardich@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.4"
+    }
+}

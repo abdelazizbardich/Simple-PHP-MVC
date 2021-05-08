@@ -182,6 +182,56 @@ rename ```home``` by your model name
     $user = new user();
     $user->delete(1); // it will returns a boolean as a result
     ```
+    * `` findBy($column,$value) `` :  select record form table by given column & value Ex:
+    ```php
+    $user = new user();
+    $user->findBy("email","user@email.com"); // it will return an object if found a row with the given email
+    ```
+    * `` insert(array()) `` :  insert into table Ex:
+    ```php
+    $user = new user();
+    $user->insert([
+        "username" => "dummy",
+        "email" => "email@email.com"
+    ]}); // On success it will return an id of inserted row or false if an error occurred
+    ```
+    ----
+    # Send email with template
+    * You can send an email using a template and data by calling a static ``send()`` function from the ``Mail`` class and passing an array like below:
+    ```php
+        Mail::send([
+            "to" => "recipient email",
+            "name"=> "recipient name",
+            "subject" => "subject",
+            "template" => "template name",
+            "data" => [
+                "title" => "dummy title"
+            ]
+        ])
+    ```
+    then create a file inside ``mails`` folder and give it a name folowed by ``.mail.php``
+
+    * ``Ex`` (sending a welcome email to the user):
+        ```php
+            class userController extends controller{
+
+                public function sendWelcomeEmail(){
+                    Mail::send([
+                        "to" => "user@email.com",
+                        "name"=> "user name",
+                        "subject" => "Welcome",
+                        "template" => "user-welcome",
+                        "data" => [
+                            "title" => "Welcome title"
+                        ]
+                    ])
+                }
+            }
+        ```
+        then we create a welcome email template file
+        ```php
+        <h1><?=$title?></h1>
+        ```
     ---
     # Some helpful functions:
     ```php

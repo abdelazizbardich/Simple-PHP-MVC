@@ -1,5 +1,5 @@
 <?php
-require "./_config/config.php";
+
 class Database{
 
     private $host = HOST;
