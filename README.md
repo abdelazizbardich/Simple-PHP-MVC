@@ -1,5 +1,12 @@
 # Template_MVC_Version1-master
-## Note: `` To get this MVC template works you have to run it on an apache server ("do not use php built in server)``
+## Note: `` )``
+---
+>### <span style="color:yellow">To get this MVC template works you have to run it on an apache server ("do not use php built in server 
+>### ``Install required composer dependencies by runnig the commande below on you terminal from root folder``</span>:
+```shell 
+composer install 
+```
+    
 ## Routes
 Use ```` web.route.php ```` inside ```` Routes ```` folder to set you routes
 
