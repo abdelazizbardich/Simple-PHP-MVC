@@ -79,6 +79,17 @@ Route::get('/user/{id}/{date}',function($id,$date){
     }
     ```
 ----
+## API
+Use ``api.route.php`` inside ``Routes`` folder to set you api routes
+> Note: <span style="color:yellow">All your api route shold stat with: "``/api``"</span>
+
+`Ex:`
+```php
+    Route::get('/api/user/{id}',function($id,$date){
+        //
+    });
+```
+> Note: ``You don't need to encode your data as json data, just return it as an array and it will automatically be encoded and printed as json data``
 ## Controller
 Create new controller by crating new file inside ```controllers``` folder the file name have to be " ```controllerName```.controller.php "
 * Ex: Creating a home controller:
