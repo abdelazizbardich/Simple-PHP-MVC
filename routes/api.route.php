@@ -3,6 +3,6 @@
 // Routes
 
     // api
-        Route::post('/api/home',function(){
-            //
+        Route::get('/api/user/get',function(){
+            
         });

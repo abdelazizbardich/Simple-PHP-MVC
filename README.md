@@ -1,7 +1,7 @@
 # Template_MVC_Version1-master
-## Note: `` )``
+## Note:
 ---
->### <span style="color:yellow">To get this MVC template works you have to run it on an apache server ("do not use php built in server 
+>### <span style="color:yellow">To get this MVC template works you have to run it on an apache server ("do not use php built in server) 
 >### ``Install required composer dependencies by runnig the commande below on you terminal from root folder``</span>:
 ```shell 
 composer install 

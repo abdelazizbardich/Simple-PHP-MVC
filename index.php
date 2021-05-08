@@ -23,8 +23,10 @@ $url = explode('/',$_GET['url']);
 if(str_contains($url[0],"api") || str_contains($url[1],"api")){
     header('content-type: application/json; charset=utf-8');
 }
+ob_start();
 require_once './routes/api.route.php';
-
+$jsonData = ob_get_clean();
+echo json_encode($jsonData);
 // if no page found
 if($notFound){
     require "./_classes/controller.php";
