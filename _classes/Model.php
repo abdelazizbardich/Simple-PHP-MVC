@@ -1,7 +1,7 @@
 <?php
 
 
-require "./_classes/Database.php";
+
 
 class Model extends Database{
     public $tableName;
@@ -52,9 +52,20 @@ class Model extends Database{
         $sql = $this->con->prepare("SELECT * FROM $this->tableName WHERE id=:id");
         $sql->bindParam(":id",$id,PDO::PARAM_INT);
         if($sql->execute()){
-            return $sql->fetchAll(PDO::FETCH_OBJ);
+            return $sql->fetch(PDO::FETCH_OBJ);
         }else{
             return false;
+        }
+    }
+    // Select by
+    public function findBy($key,$val){
+        $this->tableName = get_called_class()."s";
+        $sql = $this->con->prepare("SELECT * FROM $this->tableName WHERE $key=:val");
+        $sql->bindParam(":val",$val,PDO::PARAM_STR);
+        if($sql->execute()){
+            return $sql->fetch(PDO::FETCH_OBJ);
+        }else{
+            return $this->con->errorInfo();
         }
     }
     // insert
