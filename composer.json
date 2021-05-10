@@ -1,0 +1,13 @@
+{
+    "name": "abdelaziz/blog",
+    "type": "project",
+    "require": {
+        "firebase/php-jwt": "^5.2"
+    },
+    "authors": [
+        {
+            "name": "abdelaziz bardich",
+            "email": "abdelazizbardich@gmail.com"
+        }
+    ]
+}
