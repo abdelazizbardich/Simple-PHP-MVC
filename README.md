@@ -177,7 +177,7 @@ class home extends Model{
 ```
 rename ```home``` by your model name
 
-* Note : the model can link to it's tabel in the database only if you name the table same as model but add an '```s```' at the of the tabel name.
+* Note : the model can link to its table in the database only if you name the table is same as its model but add an '```s```' at the end of the tabel name.
 * Functions you can use with your model:
 
     * `` get() ``: get all records from the table linked to model Ex:
