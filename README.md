@@ -152,7 +152,7 @@ class homeController extends controller{
     }
 }
 ```
-* you can assess your data inside view by ``calling the array indexes as variables``, Ex: (calling page title that we have passed to home view):
+* you can assess your data inside view by ``calling the array keys as variables``, Ex: (calling page title that we have passed to home view):
 ```php
 <title><?= $pageTitle ?></title> // this will echo: Home Page as a page title
 ```
