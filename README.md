@@ -81,7 +81,7 @@ Route::get('/user/{id}/{date}',function($id,$date){
 ----
 ## API
 Use ``api.route.php`` inside ``Routes`` folder to set you api routes
-> Note: <span style="color:yellow">All your api route shold stat with: "``/api``"</span>
+> Note: <span style="color:yellow">All your api route should start with: "``/api``"</span>
 
 `Ex:`
 ```php
