@@ -91,7 +91,7 @@
 <body>
     <main>
         <h1>Welcome to MVC Strater</h1>
-        <p>Create you MVC based project with easy steps using this MVC starter template<br>this template provides (Routing, controller, moddel, Moddlewar & viwe systems) so you can use it to create any web project you want</p>
+        <p>Create you MVC based project with easy steps using this MVC starter template<br>this template provides (Routing, controller, moddel, Middlware & view systems) so you can use it to create any web project you want</p>
         <div class="box">
             <div class="grid">
                 <div class="fr1 card">
